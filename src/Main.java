@@ -11,67 +11,69 @@ short, int, long:
 
 public class Main {
     public static void main(String[] args) {
+        findSquarePerimeter();
+        findSquareArea();
+
+        findRectanglePerimeter();
+        findRectangleArea();
+
+        findCubePerimeter();
+        findCubeArea();
+
+        findSeedsQuantity();
+    }
+
+    public static void findSquarePerimeter() {
         byte squareSideLenght = 10;
 
+        int result = 4 * squareSideLenght;
+
+        System.out.println(result);
+    }
+
+    public static void findSquareArea() {
+        byte squareSideLenght = 10;
+
+        int result = squareSideLenght * squareSideLenght;
+
+        System.out.println(result);
+    }
+
+    public static void findRectanglePerimeter() {
         byte rectangleSideLenght_A = 5;
         byte rectangleSideLenght_B = 10;
 
-        byte cubeSideLenght = 5;
-
-        byte checkMateDeskSideLenght = 8;
-
-        System.out.println("Периметр квадрата равен: " + findSquarePerimeter(squareSideLenght));
-        System.out.println("Площадь квадрата равна: " + findSquareArea(squareSideLenght));
-
-        System.out.println("Периметр прямоугольника равен: " + findRectanglePerimeter(rectangleSideLenght_A,
-                rectangleSideLenght_B));
-
-        System.out.println("Площадь прямоугольника равна: " + findRectangleArea(rectangleSideLenght_A, rectangleSideLenght_B));
-        System.out.println("Периметр куба равен: " + findCubePerimeter(cubeSideLenght));
-        System.out.println("Площадь куба равна: " + findCubeArea(cubeSideLenght));
-
-        System.out.println("Количество зерен на шахматной доске равно : " + findSeedsQuantity());
-        ;
-
-    }
-
-    public static int findSquarePerimeter(byte squareSideLenght) {
-        int result = 4 * squareSideLenght;
-
-        return result;
-    }
-
-    public static int findSquareArea(byte squareSideLenght) {
-        int result = squareSideLenght * squareSideLenght;
-
-        return result;
-    }
-
-    public static int findRectanglePerimeter(byte rectangleSideLenght_A, byte rectangleSideLenght_B) {
         int result = 2 * (rectangleSideLenght_A + rectangleSideLenght_B);
 
-        return result;
+        System.out.println(result);
     }
 
-    public static int findRectangleArea(byte rectangleSideLenght_A, byte rectangleSideLenght_B) {
+    public static void findRectangleArea() {
+        byte rectangleSideLenght_A = 5;
+        byte rectangleSideLenght_B = 10;
+
         int result = rectangleSideLenght_A * rectangleSideLenght_B;
 
-        return result;
+        System.out.println(result);
     }
 
-    public static int findCubePerimeter(byte cubeSideLenght) {
+    public static void findCubePerimeter() {
+        byte cubeSideLenght = 5;
+
         int result = 12 * cubeSideLenght;
 
-        return result;
+        System.out.println(result);
     }
 
-    public static int findCubeArea(byte cubeSideLenght) {
+    public static void findCubeArea() {
+        byte cubeSideLenght = 5;
+
         int result = 6 * (cubeSideLenght * cubeSideLenght);
 
-        return result;
+        System.out.println(result);
     }
 
-    public static long findSeedsQuantity() {
+    public static void findSeedsQuantity() {
         long chunk1 = 1;
         long chunk2 = chunk1 * 2;
         long chunk3 = chunk2 * 2;
@@ -136,11 +138,11 @@ public class Main {
         long chunk62 = chunk61 * 2;
         long chunk63 = chunk62 * 2;
         long chunk64 = chunk63 * 2;
-        long total =
+        long result =
                 chunk1 + chunk2 + chunk3 + chunk4 + chunk5 + chunk6 + chunk7 + chunk8 + chunk9 + chunk10 + chunk11 + chunk12 + chunk13 + chunk14 + chunk15 + chunk16 + chunk17 + chunk18 + chunk19 + chunk20 + chunk21 + chunk22 + chunk23 + chunk24 + chunk25 + chunk26 + chunk27 + chunk28 + chunk29 + chunk30 + chunk31 + chunk32 + chunk33 + chunk34 + chunk35 + chunk36 + chunk37 + chunk38 + chunk39 + chunk40 + chunk41 + chunk42 + chunk43 + chunk44 + chunk45 + chunk46 + chunk47 + chunk48 + chunk49 + chunk50 + chunk51 + chunk52 + chunk53 + chunk54 + chunk55 + chunk56 + chunk57 + chunk58 + chunk59 + chunk60 + chunk61 + chunk62 + chunk63 + chunk64;
 
 
-        return total;
+        System.out.println(result);
     }
 }
 

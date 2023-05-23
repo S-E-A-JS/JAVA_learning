@@ -21,6 +21,8 @@ public class HW2 {
         findCubeArea();
 
         findSeedsQuantity();
+
+        experiment();
     }
 
     public static void findSquarePerimeter() {
@@ -74,9 +76,18 @@ public class HW2 {
     }
 
     public static void findSeedsQuantity() {
-        long result = (long) Math.pow(2,64) - 1;
+        long result = (long) Math.pow(2, 64) - 1;
 
-        System.out.println("Количество зерен "+result);
+        System.out.println("Количество зерен " + result);
+    }
+
+    public static void experiment() {
+        byte b = 1;
+        short s = 2;
+        int i = 1;
+        long l = 4;
+
+        System.out.println(b == i);
     }
 }
 

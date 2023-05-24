@@ -15,11 +15,11 @@ public class HW5 {
         int ageCustomer5 = 30;
 //        допустим что по закону алкоголь можно покупать с 18 лет
         cliHelpers.separator();
-        System.out.println(salesmanProgramm(ageCustomer1));
-        System.out.println(salesmanProgramm(ageCustomer2));
-        System.out.println(salesmanProgramm(ageCustomer3));
-        System.out.println(salesmanProgramm(ageCustomer4));
-        System.out.println(salesmanProgramm(ageCustomer5));
+        System.out.println(possibilitySellAlkohol(ageCustomer1));
+        System.out.println(possibilitySellAlkohol(ageCustomer2));
+        System.out.println(possibilitySellAlkohol(ageCustomer3));
+        System.out.println(possibilitySellAlkohol(ageCustomer4));
+        System.out.println(possibilitySellAlkohol(ageCustomer5));
         cliHelpers.separator();
 
 
@@ -39,44 +39,85 @@ public class HW5 {
         int testMounth13 = 13;
         int testMounthNegativeNumber = -1;
 
-        System.out.println(determineSeasonOfTheYear(mounth1));
-        System.out.println(determineSeasonOfTheYear(mounth2));
-        System.out.println(determineSeasonOfTheYear(mounth3));
-        System.out.println(determineSeasonOfTheYear(mounth4));
-        System.out.println(determineSeasonOfTheYear(mounth5));
-        System.out.println(determineSeasonOfTheYear(mounth6));
-        System.out.println(determineSeasonOfTheYear(mounth7));
-        System.out.println(determineSeasonOfTheYear(mounth8));
-        System.out.println(determineSeasonOfTheYear(mounth9));
-        System.out.println(determineSeasonOfTheYear(mounth10));
-        System.out.println(determineSeasonOfTheYear(mounth11));
-        System.out.println(determineSeasonOfTheYear(mounth12));
-        System.out.println(determineSeasonOfTheYear(testMounth0));
-        System.out.println(determineSeasonOfTheYear(testMounth13));
-        System.out.println(determineSeasonOfTheYear(testMounthNegativeNumber));
+        System.out.println("Вы ввели " + mounth1 + " результат: " + determineSeasonOfTheYear(mounth1));
+        System.out.println("Вы ввели " + mounth2 + " результат: " + determineSeasonOfTheYear(mounth2));
+        System.out.println("Вы ввели " + mounth12 + " результат: " + determineSeasonOfTheYear(mounth12));
+        System.out.println("Вы ввели " + mounth3 + " результат: " + determineSeasonOfTheYear(mounth3));
+        System.out.println("Вы ввели " + mounth4 + " результат: " + determineSeasonOfTheYear(mounth4));
+        System.out.println("Вы ввели " + mounth5 + " результат: " + determineSeasonOfTheYear(mounth5));
+        System.out.println("Вы ввели " + mounth6 + " результат: " + determineSeasonOfTheYear(mounth6));
+        System.out.println("Вы ввели " + mounth7 + " результат: " + determineSeasonOfTheYear(mounth7));
+        System.out.println("Вы ввели " + mounth8 + " результат: " + determineSeasonOfTheYear(mounth8));
+        System.out.println("Вы ввели " + mounth9 + " результат: " + determineSeasonOfTheYear(mounth9));
+        System.out.println("Вы ввели " + mounth10 + " результат: " + determineSeasonOfTheYear(mounth10));
+        System.out.println("Вы ввели " + mounth11 + " результат: " + determineSeasonOfTheYear(mounth11));
+        System.out.println("Вы ввели " + testMounth0 + " результат: " + determineSeasonOfTheYear(testMounth0));
+        System.out.println("Вы ввели " + testMounth13 + " результат: " + determineSeasonOfTheYear(testMounth13));
+        System.out.println("Вы ввели " + testMounthNegativeNumber + " результат: " + determineSeasonOfTheYear(testMounthNegativeNumber));
         cliHelpers.separator();
     }
 
-    public static String salesmanProgramm(int customerAge) {
-        int ageToBuyAlkohol = 18;
+    public static String possibilitySellAlkohol(int customerAge) {
+        String answer = "";
 
-        boolean canSellAlkohol = customerAge >= ageToBuyAlkohol;
+        switch (customerAge) {
+            case 10:
+            case 17:
+                answer = "(Продажа запрещена) Вы младше 18, я не могу продать алкоголь.";
+                break;
+            case 18:
+            case 20:
+            case 30:
+                answer = "(Продажа разрешена) Будете оплачивать картой или наличными?";
+                break;
+        }
 
-        return canSellAlkohol ? "Вы будете оплачивать картой или наличными?" :
-                "Алкоголь продается людям старше " + ageToBuyAlkohol + " лет.";
+//        почитал про контрактное программирование и если я правильно все понял то решение должно было выглядеть так +
+//        хотел решить не прописывая большое количество кейсов(если задача была бы приблежена к реальной), но для
+//        этого понадобился бы метод .valueOf()
+
+//        boolean checkPossibility = customerAge >= 18;
+//        String isPossibleSell = String.valueOf(checkPossibility);
+//
+//        switch (isPossibleSell) {
+//            case "true":
+//                answer = "(Продажа разрешена) Будете оплачивать картой или наличными?";
+//                break;
+//            case "false":
+//                answer = "(Продажа запрещена) Я не могу продать вам алкоголь.";
+//                break;
+//        }
+        return answer;
     }
 
     public static String determineSeasonOfTheYear(int mounthNumber) {
-//        можно обойтись и без этих переменных и написать сравнения сразу в return, но это снизит читабельность кода
-        boolean isSpring = mounthNumber >= 3 & mounthNumber <= 5;
-        boolean isSummer = mounthNumber >= 6 & mounthNumber <= 8;
-        boolean isAutumn = mounthNumber >= 9 & mounthNumber <= 11;
-        boolean isWinter = mounthNumber > 0 & mounthNumber <= 2 | mounthNumber == 12;
+        String season = "";
 
-        String phrase = "Вы ввели номер месяца " + mounthNumber + " и он соответствует сезону ";
+        switch (mounthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                season = "Зима";
+                break;
 
-        return isSpring ? phrase + "Весна" : isSummer ?
-                phrase + "Лето" : isAutumn ? phrase + "Осень" : isWinter ?
-                phrase + "Зима" : "Нужно ввести число от 1 до 12";
+            case 3:
+            case 4:
+            case 5:
+                season = "Весна";
+                break;
+            case 6:
+            case 7:
+            case 8:
+                season = "Лето";
+                break;
+            case 9:
+            case 10:
+            case 11:
+                season = "Осень";
+                break;
+            default:
+                season = "Нужно ввести цифру от 1 до 12";
+        }
+        return season;
     }
 }

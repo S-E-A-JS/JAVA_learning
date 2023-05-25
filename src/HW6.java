@@ -15,7 +15,7 @@ public class HW6 {
 число или числф.
          */
 
-        setPuhishment(60);
+        System.out.println(setPuhishment(1000));
         cliHelpers.separator();
 
 
@@ -23,31 +23,42 @@ public class HW6 {
         String right = "right";
         String forward = "forward";
 
-        warriorDestiny(forward);
+        System.out.println(warriorDestiny(forward)); // смерть
+        System.out.println(warriorDestiny(right)); // женился
+        System.out.println(warriorDestiny(left)); // обогатился
         cliHelpers.separator();
 
-        findNumbers();
+        System.out.println(findNumbers()); // выведет в консоль 798 1726 2654
 
     }
 
-    public static void setPuhishment(int carSpeed) {
+    public static String setPuhishment(int carSpeed) {
+        String policemanMessage = "";
+        String lectureFiveMinutes = "Какая то лекция на 5 минут";
+        String fineAmount0 = lectureFiveMinutes;
+        int speedLimit = 50;
+        int speedDifference = carSpeed - speedLimit;
+        int fineAmount1 = 40;
+        int fineAmount2 = 500;
+        int fineAmount3 = 1000;
+
         if (carSpeed < 50) {
-            System.out.println("Рядовая проверка документов.");
-        } else if (carSpeed > 50 & carSpeed < 65) {
-            System.out.printf("Вы превысили сокрость на %d км в час.\n", carSpeed - 50);
-            System.out.println("Устное предупреждение на 5 минут.");
+            policemanMessage = "Рядовая проверка документов.";
+        } else if (carSpeed > speedLimit & carSpeed < 65) {
+            policemanMessage += " Вы превысили сокрость на " + speedDifference + "км в час. " + fineAmount0;
         } else if (carSpeed > 65 & carSpeed < 100) {
-            System.out.printf("Вы превысили сокрость на %d км в час.\n", carSpeed - 65);
-            setFine(40);
+            policemanMessage += " Вы превысили сокрость на " + speedDifference + "км в час.";
+            setFine(fineAmount1);
         } else if (carSpeed > 100 & carSpeed < 130) {
-            System.out.printf("Вы превысили сокрость на %d км в час.\n", carSpeed - 100);
-            setFine(500);
+            policemanMessage += " Вы превысили сокрость на " + speedDifference + "км в час.";
+            setFine(fineAmount2);
         } else {
-            System.out.printf("Вы превысили сокрость на %d км в час.\n", carSpeed - 130);
-            setFine(1000);
+            policemanMessage += " Вы превысили сокрость на " + speedDifference + "км в час.";
+            setFine(fineAmount3);
             carConfiscation();
             driveLisenceConfiscation(3);
         }
+        return policemanMessage;
     }
 
     public static void setFine(int fineSize) {
@@ -62,26 +73,31 @@ public class HW6 {
         System.out.printf("У Вас будут изъяты права на %d года \n", years);
     }
 
-    public static void warriorDestiny(String destination) {
+    public static String warriorDestiny(String destination) {
+        String result = "";
+
         if (destination == "left") {
-            System.out.println("Витязь обогатился");
+            result = "Витязь обогатился";
         } else if (destination == "right") {
-            System.out.println("Женили витязя");
+            result = "Женили витязя";
         } else if (destination == "forward") {
-            System.out.println("Смерть витязя");
+            result = "Смерть витязя";
         }
 
-        System.out.printf("Результаты выбора витязя: %s", destination);
+        return result;
     }
 
-    public static void findNumbers() {
+    public static String findNumbers() {
 //        Дано число меньше 3000. При делении числа на 32 получается остаток 30, при делении на 58 - остаток 44. Найдите
-//        число или число.
+//        число или числа.
+        String result = "";
+
         for (int i = 0; i < 3000; i++) {
             if (i % 32 == 30 & i % 58 == 44) {
-                System.out.println("вывод стейджа" + i); // результат 798, 1726 и 2654
+                result += " " + i;
             }
         }
+        return result;
     }
 }
 

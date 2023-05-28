@@ -13,12 +13,6 @@ public class HW8 {
     }
 
     public static boolean parrotTrouble(boolean isParrotTalkNow, int hour) {
-        boolean result = false;
-
-        if (isParrotTalkNow & (hour < 7 || hour > 20) ) {
-                result = true;
-        }
-
-        return result;
+        return isParrotTalkNow & (hour < 7 || hour > 20);
     }
 }

@@ -16,7 +16,7 @@ public class HW8 {
         boolean result = false;
 
         if (isParrotTalkNow) {
-            if (hour < 7 | hour > 20) {
+            if (hour < 7 || hour > 20) {
                 result = true;
             }
         }

@@ -10,8 +10,6 @@ public class HW8 {
         System.out.println(parrotTrouble(true, 6)); // true
         System.out.println(parrotTrouble(true, 7)); // false
         System.out.println(parrotTrouble(false, 6)); // false
-        System.out.println(parrotTrouble(false, 50)); // false
-        System.out.println(parrotTrouble(false, -1)); // false
     }
 
     public static boolean parrotTrouble(boolean isParrotTalkNow, int hour) {

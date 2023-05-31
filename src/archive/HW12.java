@@ -2,17 +2,16 @@ package archive;
 
 public class HW12 {
     public static void main(String[] args) {
-        rectangle(5, 7); // рисуем прямоугольник
-        findNaturalNumbers(36); // найти натуральные числа
-        printCheckMateDesk(8,8); // рисуем шахматную доску
-        printMultiplicationTable(); // вывести таблицу умножения
-        printRightPartArrowDown(); // вывод треугольника (правая половина стрелки вниз)
-        printRightPartArrowUp(); // вывод треугольника (левая половина стрелки вверх)
-        printArrowUp(); // стрелка вверх
-        printArrowDown(); // -\\- вниз
-        printDiamond(); // вывод ромба
-
-
+//        rectangle(5, 7); // рисуем прямоугольник
+//        findNaturalNumbers(36); // найти натуральные числа
+//        printCheckMateDesk(8,8); // рисуем шахматную доску
+//        printMultiplicationTable(); // вывести таблицу умножения
+//        printRightPartArrowDown(); // вывод треугольника (правая половина стрелки вниз)
+//        printRightPartArrowUp(); // вывод треугольника (левая половина стрелки вверх)
+//        printArrowUp(); // стрелка вверх
+//        printArrowDown(); // -\\- вниз
+//        printDiamond(); // вывод ромба
+//        firstTriangleOfNumbers();
     }
 
     public static void rectangle(int height, int width) {
@@ -66,7 +65,7 @@ public class HW12 {
         String result = "";
 
         for (int i = 0; i < height; i++) {
-            for (int j = 0; j < (width-width % 2) / 2; j++) {
+            for (int j = 0; j < (width - width % 2) / 2; j++) {
                 if (i % 2 == 0) {
                     result += "*" + "_";
                 } else {
@@ -181,4 +180,25 @@ public class HW12 {
         printArrowUp();
         printArrowDown();
     }
+
+    public static void firstTriangleOfNumbers() {
+        String result = "";
+        String forNumbers = "";
+        String forSpaces = "";
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 1; j < 6 - i; j++) {
+                forSpaces += " ";
+            }
+            for (int k = 0; k < i + i + 1; k++) {
+                forNumbers += i + 1;
+            }
+            result += forSpaces + forNumbers;
+            forSpaces = "";
+            forNumbers = "";
+        }
+
+        System.out.println(result);
+    }
+
 }

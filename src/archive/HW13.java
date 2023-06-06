@@ -18,9 +18,9 @@ public class HW13 {
     остальные годы, номер которых кратен 4, — високосные[
             * */
 
-        System.out.println(findNumbers(3000));
-        System.out.println(findEvenNumbers(100));
-        findLeapYear(100);
+//        System.out.println(findNumbers(3000));
+//        System.out.println(findEvenNumbers(100));
+//        findLeapYear(100);
         findPrimeNumbers(100);
     }
 
@@ -29,7 +29,7 @@ public class HW13 {
         String result = "";
 
         for (int i = 1; i < limit; i++) {
-            if (checkIsPrime(i)) {
+            if (isPrime(i)) {
                 result += i + " ";
             }
         }
@@ -37,8 +37,9 @@ public class HW13 {
 
     }
 
-    public static boolean checkIsPrime(int n) {
-        for (int i = 2; i < n; i++) { // Понимаю зачем нужна именно такая конструкция цикла - если делить число на
+    public static boolean isPrime(int n) {
+        int range = (int) Math.ceil(Math.sqrt(n));
+        for (int i = 2; i < range; i++) { // Понимаю зачем нужна именно такая конструкция цикла - если делить число на
             // большее то всегда будет остаток от деления
 
             /*

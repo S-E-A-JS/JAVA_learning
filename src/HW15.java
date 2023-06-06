@@ -68,7 +68,7 @@ public class HW15 {
         System.out.println(test0.toUpperCase()); // TESTING
         cliHelpers.separator();
 
-        test0 = "   "  + " пробелы нас преследуют" + '\u0020' + '\n';
+        test0 = "   " + " пробелы нас преследуют" + '\u0020' + '\n';
         System.out.println(test0); //     пробелы нас преследуют (+ разрыв строки)
         System.out.println(test0.trim()); // пробелы нас преследуют (все символы пробелов в начале и конце строки
         // удалены)

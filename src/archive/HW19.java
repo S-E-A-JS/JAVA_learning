@@ -1,3 +1,5 @@
+package archive;
+
 public class HW19 {
     public static void main(String[] args) {
         System.out.println(isPalindrome("А роза упала на лапу Азора")); // true
